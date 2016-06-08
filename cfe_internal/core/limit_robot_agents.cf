@@ -14,7 +14,7 @@ bundle agent cfe_internal_limit_robot_agents
       "bin/cf-execd"
       process_count => check_execd("1"),
       process_select => exclude_procs(".*(-F|--no-fork).*"),
-      comment => "Check cf-execd process if exceed the number (except started with -F/--no-fork)",
+      comment => "Check cf-execd process if exceed the number (not counting ones started with -F/--no-fork)",
       handle => "cfe_internal_limit_robot_agents_processes_check_cf_execd";
 
       "bin/cf-monitord"
